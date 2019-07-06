@@ -1,0 +1,7 @@
+name: LCEmotes
+author: BlockGame Development Team
+main: us.blockgame.lcemotes.LCEmotes
+version: 1.0
+commands:
+  emote:
+    aliases: [emotes, em, e]
