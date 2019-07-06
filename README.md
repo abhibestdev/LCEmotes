@@ -1,0 +1,2 @@
+# LCEmotes
+LunarClient Emotes
