@@ -9,6 +9,7 @@ import us.blockgame.lcemotes.emote.Emote;
 import us.blockgame.lcemotes.util.UUIDUtil;
 import java.util.stream.IntStream;
 
+import java.util.stream.Stream;
 
 public class LCEmotes extends JavaPlugin implements PluginMessageListener {
 
