@@ -28,7 +28,7 @@ public class EmoteCommand implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "You cannot do this as console.");
                 return true;
             }
-            if (!Emote.exists(args[0])) {
+            if (Emote.getByName(args[0]) == null) {
                 sender.sendMessage(ChatColor.RED + "That emote doesn't exist.");
                 sender.sendMessage(ChatColor.RED + "All emotes: WAVE, HANDS_UP, FLOSS, DAB, T_POSE, SHRUG, FACEPALM");
                 return true;
@@ -40,7 +40,7 @@ public class EmoteCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 2) {
-            if (!Emote.exists(args[1])) {
+            if (Emote.getByName(args[1]) == null) {
                 sender.sendMessage(ChatColor.RED + "That emote doesn't exist.");
                 sender.sendMessage(ChatColor.RED + "All emotes: WAVE, HANDS_UP, FLOSS, DAB, T_POSE, SHRUG, FACEPALM");
                 return true;
