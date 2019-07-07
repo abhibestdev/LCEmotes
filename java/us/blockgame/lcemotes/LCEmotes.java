@@ -21,9 +21,9 @@ public class LCEmotes extends JavaPlugin implements PluginMessageListener {
     }
 
     public static void sendEmote(Emote emote, Player player) {
-        instance.getServer().getOnlinePlayers().forEach(all -> 
+        Stream.of(instance.getServer().getOnlinePlayers()).forEach(all -> 
             all.sendPluginMessage(instance, "Lunar-Client", getEmoteData(emote, player));
-        ); // not sure if this works with 1.7.4 NMS spigots, but it should....
+        );
     }
 
     private static byte[] getEmoteData(Emote emote, Player player) {
