@@ -25,7 +25,7 @@ public class LCEmotes extends JavaPlugin implements PluginMessageListener {
     public static void sendEmote(Emote emote, Player player) {
         Stream.of(instance.getServer().getOnlinePlayers()).forEach(all -> 
             all.sendPluginMessage(instance, "Lunar-Client", getEmoteData(emote, player));
-        ); // todo, import
+        );
     }
 
     private static byte[] getEmoteData(Emote emote, Player player) {
@@ -33,7 +33,7 @@ public class LCEmotes extends JavaPlugin implements PluginMessageListener {
         data[0] = (byte) 26;
         data[20] = (byte) emote.getId();
         byte[] uuid = UUIDUtil.asBytes(player.getUniqueId());
-        IntStream.range(1, uuid.length).forEach(i -> data[i] = uuid[i-1]); // todo: import, will do inabit :P
+        IntStream.range(1, uuid.length).forEach(i -> data[i] = uuid[i-1]);
         return data;
     }
 
