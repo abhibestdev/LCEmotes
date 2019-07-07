@@ -2,6 +2,7 @@ package us.blockgame.lcemotes.emote;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Getter
@@ -17,22 +18,8 @@ public enum Emote {
 
     public int id;
 
-    public static boolean exists(String name) {
-        for (Emote emote : Emote.values()) {
-            if (emote.toString().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static Emote getByName(String name) {
-        for (Emote emote : Emote.values()) {
-            if (emote.toString().equalsIgnoreCase(name)) {
-                return emote;
-            }
-        }
-        return null;
+        return Stream.of(Emote.values()).filter(emote -> emote.toString().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
 
 }
