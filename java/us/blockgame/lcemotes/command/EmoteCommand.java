@@ -20,7 +20,7 @@ public class EmoteCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " [emote:player] [possible argument]");
+            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " <emote|player> [emote]");
             return true;
         }
         if (args.length == 1) {
