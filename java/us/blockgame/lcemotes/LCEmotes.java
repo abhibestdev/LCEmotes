@@ -37,7 +37,5 @@ public class LCEmotes extends JavaPlugin implements PluginMessageListener {
         return data;
     }
 
-    public void onPluginMessageReceived(String s, Player player, byte[] bytes) {
-        // this does nothing!
-    }
+    public void onPluginMessageReceived(String s, Player player, byte[] bytes) {}
 }
