@@ -55,7 +55,7 @@ public class EmoteCommand implements CommandExecutor {
             }
             Player target = this.plugin.getServer().getPlayer(args[0]);
             if (target == null) {
-                sender.sendMessage(ChatColor.RED + "Could not find player " + target.getName() + ".");
+                sender.sendMessage(ChatColor.RED + "Could not find player " + args[0] + ".");
                 return true;
             }
             LCEmotes.sendEmote(emote, target);
