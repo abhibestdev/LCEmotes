@@ -20,7 +20,7 @@ public class EmoteCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " [emote:player] [possible argument]");
+            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " <emote|player> [emote]");
             return true;
         }
         if (args.length == 1) {
@@ -28,7 +28,7 @@ public class EmoteCommand implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "You cannot do this as console.");
                 return true;
             }
-            if (!Emote.exists(args[0])) {
+            if (Emote.getByName(args[0]) == null) {
                 sender.sendMessage(ChatColor.RED + "That emote doesn't exist.");
                 sender.sendMessage(ChatColor.RED + "All emotes: WAVE, HANDS_UP, FLOSS, DAB, T_POSE, SHRUG, FACEPALM");
                 return true;
@@ -40,7 +40,7 @@ public class EmoteCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 2) {
-            if (!Emote.exists(args[1])) {
+            if (Emote.getByName(args[1]) == null) {
                 sender.sendMessage(ChatColor.RED + "That emote doesn't exist.");
                 sender.sendMessage(ChatColor.RED + "All emotes: WAVE, HANDS_UP, FLOSS, DAB, T_POSE, SHRUG, FACEPALM");
                 return true;
@@ -55,7 +55,7 @@ public class EmoteCommand implements CommandExecutor {
             }
             Player target = this.plugin.getServer().getPlayer(args[0]);
             if (target == null) {
-                sender.sendMessage(ChatColor.RED + "Could not find player " + target.getName() + ".");
+                sender.sendMessage(ChatColor.RED + "Could not find player " + args[0] + ".");
                 return true;
             }
             LCEmotes.sendEmote(emote, target);
