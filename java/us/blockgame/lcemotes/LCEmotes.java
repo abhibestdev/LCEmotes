@@ -25,7 +25,7 @@ public class LCEmotes extends JavaPlugin implements PluginMessageListener {
 
     public static void sendEmote(Emote emote, Player player) {
         Stream.of(instance.getServer().getOnlinePlayers()).forEach(all -> 
-            all.sendPluginMessage(instance, "Lunar-Client", getEmoteData(emote, player));
+            all.sendPluginMessage(instance, "Lunar-Client", getEmoteData(emote, player))
         );
     }
 
